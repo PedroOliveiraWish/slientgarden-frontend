@@ -1,0 +1,59 @@
+$font-color: #A8C3A6;
+$marked-option: #F4EEE0;
+$petal-color: #F3DCE2;
+$title-color: #3B5249;
+$shadow-color: #D8A7B1;
+
+.sidebar {
+    padding: 1rem;
+    border: none;
+
+    .bg-sidebar {
+        border-radius: 0.5rem;
+        padding: .5rem;
+        box-shadow: 0px 4px 8px $shadow-color;
+        background-color: $petal-color;
+
+
+        .sidebar-header {
+            .logo {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .logo-text {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color: $title-color;
+                    text-align: right;
+                }
+            }
+        }
+
+        .sidebar-menu {
+            margin-top: 1rem;
+            
+            .sidebar-menu-item {
+                padding: .7rem 1.2rem;
+                border-radius: 1.5rem;
+                background-color: #fff;
+                margin: .5rem 0;
+                text-transform: capitalize;
+
+                .sidebar-menu-item-text {
+                    font-size: 1.2rem;
+                    color: $font-color;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .dropdown-menu {
+        background-color: $marked-option;
+        border-radius: 1.5rem;
+        box-shadow: 0px 4px 8px $shadow-color;
+        padding: 1rem;
+    }
+}
