@@ -2,14 +2,18 @@ import { SavedQuote, SavedQuoteResponse } from "@/app/types/savedQuote";
 
 export async function createSavedQuote(
     userId: number,
-    quoteId: number
+    quote_id: number
 ): Promise<SavedQuote> {
+
     const response = await fetch("http://localhost:8080/saved-quotes/saving-quote", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ userId, quoteId }),
+        body: JSON.stringify({
+            user: {id: userId},
+            quote: {id: quote_id},
+        }),
     });
 
     if (!response.ok) {

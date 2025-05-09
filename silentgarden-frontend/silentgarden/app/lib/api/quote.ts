@@ -1,12 +1,13 @@
 import { QuoteEntry, QuoteResponse } from "@/app/types/quote";
 
-export async function createQuote({quote_text, user_id}: QuoteEntry): Promise<QuoteResponse> {
+export async function createQuote({ quote_text, user }: QuoteEntry): Promise<QuoteResponse> {
+    const userId = user.id; // Extract user ID from the user object
     const response = await fetch("http://localhost:8080/quotes/save-quote", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ quote_text, user_id }),
+        body: JSON.stringify({ quote_text, user: { id: userId } }),
     });
 
     if (!response.ok) {

@@ -1,5 +1,5 @@
 export interface SavedQuote {
-    quoteId: number;
+    quote_id: number;
     userId: number;
 }
 

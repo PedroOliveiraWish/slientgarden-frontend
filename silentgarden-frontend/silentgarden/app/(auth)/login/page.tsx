@@ -26,8 +26,11 @@ export default function LoginPage() {
   const [login, setLogin] = useState(true);
 
   useEffect(() => {
-    localStorage.removeItem("user");
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("user");
+    }
   }, []);
+  
 
   const handleSubmit = async ({ username, password }: Auth) => {
     setError("");

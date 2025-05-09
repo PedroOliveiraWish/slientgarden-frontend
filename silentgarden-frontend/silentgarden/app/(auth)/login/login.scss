@@ -1,116 +1,124 @@
-$font-color: #000;
-$marked-option: #f4eee0;
-$petal-color: #f3dce2;
-$title-color: #3b5249;
-$shadow-color: #d8a7b1;
+$font-color: #1e1e2f;
+$marked-option: #e0e7ff; // Indigo-100
+$petal-color: #eef2ff;   // Indigo-50
+$title-color: #3730a3;   // Indigo-800
+$shadow-color: #c7d2fe;  // Indigo-200
+
+
+$form-font-stack: "Georgia", serif;
+$ui-font-stack: "Arial", sans-serif;
+
+$form-radius: 1rem;
+$form-shadow: 0 4px 10px rgba($shadow-color, 0.3);
 
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url("/assets/wallpaper-forest.avif");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/assets/wallpaper-forest.avif");
 
-    .form{
-        background: $marked-option;
-        padding: 2rem;
-        max-width: 400px;
-        margin: 2rem auto;
-        border-radius: 1rem;
-        box-shadow: 0 4px 10px rgba($shadow-color, 0.3);
-        font-family: "Georgia", serif;
-        color: $font-color;
+  .form {
+    background: $marked-option;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    border-radius: $form-radius;
+    box-shadow: $form-shadow;
+    font-family: $form-font-stack;
+    color: $font-color;
 
-        .title-form {
-            text-align: center;
-            margin-bottom: 2rem;
+    .title-form {
+      text-align: center;
+      margin-bottom: 2rem;
 
-            h1 {
-                font-size: 2rem;
-                font-weight: bold;
-                text-transform: uppercase;
-                color: $title-color;
-                margin-bottom: 0.5rem;
-            }
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $title-color;
+        margin-bottom: 0.5rem;
+      }
 
-            p {
-                font-size: 0.9rem;
-                color: darken($font-color, 30%);
-                font-family: "Arial", sans-serif;
-            }
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-
-            label {
-                font-weight: bold;
-                color: $title-color;
-                margin-bottom: 0.25rem;
-            }
-
-            input {
-                width: 100%;
-                padding: 0.75rem;
-                border-radius: 0.5rem;
-                font-size: 1rem;
-                background-color: #fff;
-                color: $font-color;
-
-                &:focus {
-                    outline: none;
-                    border-color: $title-color;
-                    box-shadow: 0 0 0 2px rgba($title-color, 0.2);
-                }
-            }
-
-            button[type="submit"] {
-                background-color: $title-color;
-                color: #fff;
-                padding: 0.75rem;
-                font-weight: bold;
-                font-size: 1rem;
-                border: none;
-                border-radius: 0.5rem;
-                cursor: pointer;
-                transition: background 0.3s ease;
-
-                &:hover {
-                    background-color: darken($title-color, 10%);
-                }
-            }
-
-            .text-red-500 {
-                color: #c0392b;
-                font-size: 0.875rem;
-                margin-top: -1rem;
-            }
-        }
-
-        .text-center {
-            margin-top: 1.5rem;
-
-            p {
-                font-size: 0.9rem;
-                color: darken($font-color, 30%);
-            }
-
-            button {
-                font-weight: bold;
-                color: $title-color;
-                background: none;
-                border: none;
-                padding: 0;
-                margin-top: 0.25rem;
-                cursor: pointer;
-                text-decoration: underline;
-
-                &:hover {
-                    color: darken($title-color, 10%);
-                }
-            }
-        }
+      p {
+        font-size: 0.9rem;
+        color: darken($font-color, 30%);
+        font-family: $ui-font-stack;
+      }
     }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      label {
+        font-weight: bold;
+        color: $title-color;
+        margin-bottom: 0.25rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        background-color: #fff;
+        color: $font-color;
+        border: 2px solid transparent;
+
+        &:focus {
+          outline: none;
+          border-color: $title-color;
+          box-shadow: 0 0 0 2px rgba($title-color, 0.2);
+        }
+      }
+
+      button[type="submit"] {
+        background-color: $title-color;
+        color: #fff;
+        padding: 0.75rem;
+        font-weight: bold;
+        font-size: 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background-color: darken($title-color, 10%);
+        }
+      }
+
+      .text-red-500 {
+        color: #c0392b;
+        font-size: 0.875rem;
+        margin-top: -1rem;
+      }
+    }
+
+    .text-center {
+      margin-top: 1.5rem;
+
+      p {
+        font-size: 0.9rem;
+        color: darken($font-color, 30%);
+      }
+
+      button {
+        font-weight: bold;
+        color: $title-color;
+        background: none;
+        border: none;
+        padding: 0;
+        margin-top: 0.25rem;
+        cursor: pointer;
+        text-decoration: underline;
+
+        &:hover {
+          color: darken($title-color, 10%);
+        }
+      }
+    }
+  }
 }

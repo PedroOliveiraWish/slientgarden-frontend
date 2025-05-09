@@ -9,7 +9,7 @@ import "../globals.css"; // Make sure your global styles are imported
 const paths = [
   { title: "journal", path: "/journal" },
   { title: "quotes", path: "/quotes" },
-  { title: "garden", path: "/garden" },
+  { title: "garden", path: "/" },
   { title: "logout", path: "/logout" },
 ];
 
@@ -34,8 +34,7 @@ export default function RootLayout({
         <SidebarProvider>
           <AppSidebar paths={paths} user={user} />
           <main
-            className="flex flex-col items-center justify-center w-full h-full"
-            style={{ padding: "1rem 1rem 1rem 0" }}
+            style={{ padding: "1rem 1rem 1rem 0", width: "100%" }}
           >
             {children}
           </main>
